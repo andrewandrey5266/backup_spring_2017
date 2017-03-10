@@ -1,0 +1,6 @@
+C:\Users\Dusheba\Documents\Visual Studio 2015\Projects\NumericalMethods\Lab3\bin\Debug\Lab3.exe.config
+C:\Users\Dusheba\Documents\Visual Studio 2015\Projects\NumericalMethods\Lab3\bin\Debug\Lab3.exe
+C:\Users\Dusheba\Documents\Visual Studio 2015\Projects\NumericalMethods\Lab3\bin\Debug\Lab3.pdb
+C:\Users\Dusheba\Documents\Visual Studio 2015\Projects\NumericalMethods\Lab3\obj\Debug\Lab3.csprojResolveAssemblyReference.cache
+C:\Users\Dusheba\Documents\Visual Studio 2015\Projects\NumericalMethods\Lab3\obj\Debug\Lab3.exe
+C:\Users\Dusheba\Documents\Visual Studio 2015\Projects\NumericalMethods\Lab3\obj\Debug\Lab3.pdb

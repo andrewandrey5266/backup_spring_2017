@@ -1,0 +1,9 @@
+c:\users\dusheba\documents\visual studio 2015\Projects\NumericalMethods\lab1\bin\Debug\lab1.exe.config
+c:\users\dusheba\documents\visual studio 2015\Projects\NumericalMethods\lab1\bin\Debug\lab1.exe
+c:\users\dusheba\documents\visual studio 2015\Projects\NumericalMethods\lab1\bin\Debug\lab1.pdb
+c:\users\dusheba\documents\visual studio 2015\Projects\NumericalMethods\lab1\obj\Debug\lab1.csprojResolveAssemblyReference.cache
+c:\users\dusheba\documents\visual studio 2015\Projects\NumericalMethods\lab1\obj\Debug\lab1.Form1.resources
+c:\users\dusheba\documents\visual studio 2015\Projects\NumericalMethods\lab1\obj\Debug\lab1.Properties.Resources.resources
+c:\users\dusheba\documents\visual studio 2015\Projects\NumericalMethods\lab1\obj\Debug\lab1.csproj.GenerateResource.Cache
+c:\users\dusheba\documents\visual studio 2015\Projects\NumericalMethods\lab1\obj\Debug\lab1.exe
+c:\users\dusheba\documents\visual studio 2015\Projects\NumericalMethods\lab1\obj\Debug\lab1.pdb

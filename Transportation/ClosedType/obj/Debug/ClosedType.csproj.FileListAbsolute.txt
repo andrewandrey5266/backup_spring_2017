@@ -1,0 +1,6 @@
+C:\Users\Dusheba\Desktop\Operation research\Transportation\ClosedType\bin\Debug\ClosedType.exe.config
+C:\Users\Dusheba\Desktop\Operation research\Transportation\ClosedType\bin\Debug\ClosedType.exe
+C:\Users\Dusheba\Desktop\Operation research\Transportation\ClosedType\bin\Debug\ClosedType.pdb
+C:\Users\Dusheba\Desktop\Operation research\Transportation\ClosedType\obj\Debug\ClosedType.csprojResolveAssemblyReference.cache
+C:\Users\Dusheba\Desktop\Operation research\Transportation\ClosedType\obj\Debug\ClosedType.exe
+C:\Users\Dusheba\Desktop\Operation research\Transportation\ClosedType\obj\Debug\ClosedType.pdb
