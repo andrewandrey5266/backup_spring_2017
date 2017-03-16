@@ -7,3 +7,12 @@ c:\users\dusheba\documents\visual studio 2015\Projects\NumericalMethods\lab1\obj
 c:\users\dusheba\documents\visual studio 2015\Projects\NumericalMethods\lab1\obj\Debug\lab1.csproj.GenerateResource.Cache
 c:\users\dusheba\documents\visual studio 2015\Projects\NumericalMethods\lab1\obj\Debug\lab1.exe
 c:\users\dusheba\documents\visual studio 2015\Projects\NumericalMethods\lab1\obj\Debug\lab1.pdb
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\NumericalMethods\lab1\bin\Debug\lab1.exe.config
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\NumericalMethods\lab1\obj\Debug\lab1.exe
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\NumericalMethods\lab1\obj\Debug\lab1.pdb
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\NumericalMethods\lab1\bin\Debug\lab1.exe
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\NumericalMethods\lab1\bin\Debug\lab1.pdb
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\NumericalMethods\lab1\obj\Debug\lab1.csprojResolveAssemblyReference.cache
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\NumericalMethods\lab1\obj\Debug\lab1.Form1.resources
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\NumericalMethods\lab1\obj\Debug\lab1.Properties.Resources.resources
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\NumericalMethods\lab1\obj\Debug\lab1.csproj.GenerateResource.Cache

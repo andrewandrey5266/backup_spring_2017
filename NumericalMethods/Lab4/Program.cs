@@ -36,11 +36,9 @@ namespace Lab4
         {
             for (float x = 0; x <= n; x += h)
             {
-                Console.WriteLine("\t" + x + "\t" + y);
+                Console.WriteLine("\t" +"x = " +x + "\t" + "y = "+y);
                 y += h * f(y);
             }
-
-           
         }
     }
 }

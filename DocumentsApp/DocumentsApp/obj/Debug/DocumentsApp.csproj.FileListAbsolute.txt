@@ -23,3 +23,6 @@ C:\Users\Dusheba\Documents\Visual Studio 2015\Projects\DocumentsApp\DocumentsApp
 C:\Users\Dusheba\Documents\Visual Studio 2015\Projects\DocumentsApp\DocumentsApp\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Dusheba\Documents\Visual Studio 2015\Projects\DocumentsApp\DocumentsApp\bin\Debug\EntityFramework.xml
 C:\Users\Dusheba\Documents\Visual Studio 2015\Projects\DocumentsApp\DocumentsApp\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\DocumentsApp\DocumentsApp\bin\Debug\DocumentsApp.exe.config
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\DocumentsApp\DocumentsApp\obj\Debug\DocumentsApp.exe
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\DocumentsApp\DocumentsApp\obj\Debug\DocumentsApp.pdb

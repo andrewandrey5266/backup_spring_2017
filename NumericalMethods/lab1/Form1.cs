@@ -16,9 +16,6 @@ namespace lab1
         {
             InitializeComponent();
         }
-
-
-
         private double[] SolveLinearEquations(string[] input)
         {
             double[][] rows = new double[input.Length][];

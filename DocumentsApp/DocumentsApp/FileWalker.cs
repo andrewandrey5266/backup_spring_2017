@@ -43,9 +43,7 @@ namespace DocumentsApp
             }
         }
         private void SendViaFtp(FileInfo fi)
-        {
-
-
+        { 
             // Get the object used to communicate with the server.  
             //////FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://www.contoso.com/test.htm");
             FtpWebRequest request = (FtpWebRequest)WebRequest.Create("ftp://speedtest.tele2.net:21/upload/log.txt");
@@ -93,8 +91,7 @@ namespace DocumentsApp
 
             //string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=usersdb;Integrated Security=True; User id=DESKTOP-N9U7COP\SQLEXPRESS";
             string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Database"].ConnectionString;
-            var a = DateTime.Now.Month + "-" + DateTime.Now.Day + "-" + DateTime.Now.Year;
-            var name = fi.Name.Substring(0, fi.Name.LastIndexOf("."));
+      
             string sqlExpression = "INSERT INTO Archive (Name, Date) VALUEs ('" + fi.Name + "', '" + DateTime.Now.ToString() + "');";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -103,7 +100,7 @@ namespace DocumentsApp
                 SqlCommand command = new SqlCommand(sqlExpression, connection);
                 command.ExecuteReader();
             }
-            Console.WriteLine("Move" + DateTime.Now);
+            Console.WriteLine("Moved at " + DateTime.Now);
 
         }
     }

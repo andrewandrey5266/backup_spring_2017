@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using iTextSharp;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
+using System.Drawing;
 
 namespace ClosedType
 {
@@ -21,11 +26,104 @@ namespace ClosedType
     }
     class Solver
     {
+        public static Pack PotentialsMethod(Pack closed, Pack optimized)
+        {
+            closed = new Pack
+            {
+                Matrix = closed.Matrix.Clone() as int[,],
+                Demand = new int[closed.Demand.Length].ToList().Select(x=> -666).ToArray(),
+                Supply = new int[closed.Supply.Length].ToList().Select(x => -666).ToArray()
+            };
+            closed.Demand[0] = 0;
+            var result = Solver.BuildPotentials(closed, optimized);
+            if (Solver.CheckForOptimality(result))            
+                Solver.RedistribSupplies(result,optimized);            
+
+            return null;
+        }
+        private static Pack BuildPotentials(Pack init, Pack optimized)
+        {
+            bool quit = true;
+            do 
+            {
+                quit = true;
+                for(int i  = 0; i < optimized.Matrix.GetLength(0); i++)
+                {
+                    for(int j = 0; j < optimized.Matrix.GetLength(1); j++)
+                    {
+                        if(optimized.Matrix[i,j] != 0)
+                        {
+                            //quit = false;
+                            if (init.Demand[i] != -666)
+                            {
+                                quit = false;
+                                optimized.Matrix[i, j] = 0;
+                                init.Supply[j] = init.Matrix[i, j] - init.Demand[i]; 
+                            }
+                            if (init.Supply[j] != -666)
+                            {
+                                quit = false;
+                                optimized.Matrix[i, j] = 0;
+                                init.Demand[i] = init.Matrix[i, j] - init.Supply[j] ;
+
+                            }
+                        }
+                    }
+                }
+               
+            } while (!quit) ;
+
+            PrintMatrix(init.Matrix);
+            PrintArray(init.Demand);
+            PrintArray(init.Supply);
+            return init;
+        }
+        private static bool CheckForOptimality(Pack pack)
+        {
+            for (int i = 0; i < pack.Matrix.GetLength(0); i++)
+            {
+                for (int j = 0; j < pack.Matrix.GetLength(1); j++)
+                {
+                    if (pack.Matrix[i, j] - pack.Supply[j] - pack.Demand[i] < 0)
+                        return false;
+                }
+            }
+            return true;
+        }
+        private static Pack RedistribSupplies(Pack init, Pack optimized)
+        {
+            var initcopy = init.Matrix.Clone() as int[];
+           
+
+            do
+            {
+                int x, y;
+                int max = int.MaxValue;
+                // origin of root
+                for(int i = 0; i < init.Matrix.GetLength(0); i++)
+                {
+                    for(int j = 0; j < init.Matrix.GetLength(1); j++)
+                    {
+                        if (init.Matrix[i, j] < 0 && init.Matrix[i, j] * -1 > max)
+                        {
+                            max = init.Matrix[i, j];
+                            x = i; y = j;
+                        }
+
+                    }
+                }
+                // shape of root
+                for (int i )
+
+
+            } while (!CheckForOptimality(init));
+
+            return init;
+        }
         public static Pack VogelsMethod(int[,] initMatrix, int[] supply, int[] demand)
         {
             var result = new Pack(supply.Length, demand.Length, initMatrix.GetLength(1), initMatrix.GetLength(0));
             var crossed = new bool[initMatrix.GetLength(0), initMatrix.GetLength(1)];
-
            
             CopyArray(supply, result.Supply);
             CopyArray(demand, result.Demand);
@@ -218,6 +316,23 @@ namespace ClosedType
         }
         public static Pack NorthWestMethod(int[,] initMatrix, int[] supply, int[] demand)
         {
+            //pdf = new string[initMatrix.GetLength(0) + 1, initMatrix.GetLength(1) + 1];
+            //for (int i = 0; i < pdf.GetLength(0); i++)
+            //{
+            //    for (int j = 0; j < pdf.GetLength(1); j++)
+            //    {
+            //        pdf[i, j] = "";
+            //    }
+            //}
+            //for (int i = 0; i < demand.Length; i++)
+            //{
+            //    pdf[pdf.GetLength(0) - 1, i] = demand[i].ToString();
+            //}
+            //for (int j = 0; j < supply.Length; j++)
+            //{
+            //    pdf[j, pdf.GetLength(1) - 1] = supply[j].ToString();
+            //}
+
             var result = new Pack(supply.Length, demand.Length, initMatrix.GetLength(1), initMatrix.GetLength(0));
             CopyArray(supply, result.Supply);
             CopyArray(demand, result.Demand);
@@ -232,23 +347,41 @@ namespace ClosedType
                     if (result.Supply[i] > result.Demand[j])
                     {
                         result.Matrix[i, j] = result.Demand[j];
+                        //pdf[i, j] = result.Matrix[i, j].ToString();
+                        //pdf[i, pdf.GetLength(1) - 1] += " / " + (result.Demand[i] - result.Matrix[i, j]).ToString();
+                        //pdf[pdf.GetLength(0) - 1, j] += " / " + (result.Supply[i] - result.Matrix[i, j]).ToString();
+
                         result.Supply[i] -= result.Demand[j];
                         result.Demand[j] = 0;
+
+                        
                     }
                     else if (result.Demand[j] > result.Supply[i])
                     {
                         result.Matrix[i, j] = result.Supply[i];
+                        //pdf[i, j] = result.Matrix[i, j].ToString();
+                        //pdf[i, pdf.GetLength(1) - 1] += " / " + (result.Demand[i] - result.Matrix[i, j]).ToString();
+                        //pdf[pdf.GetLength(0) - 1, j] += " / " + (result.Supply[i] - result.Matrix[i, j]).ToString();
+
                         result.Demand[j] -= result.Supply[i];
                         result.Supply[i] = 0;
                         shiftX = j;
+
+               
                         break;
                     }
                     else if (result.Demand[j] == result.Supply[i])
                     {
                         result.Matrix[i, j] = result.Supply[i];
+                        //pdf[i, j] = result.Matrix[i, j].ToString();
+                        //pdf[i, pdf.GetLength(1) - 1] += " / " + (result.Demand[i] - result.Matrix[i, j]).ToString();
+                        //pdf[pdf.GetLength(0) - 1, j] += " / " + (result.Supply[i] - result.Matrix[i, j]).ToString();
+
                         result.Supply[i] = 0;
                         result.Demand[j] = 0;
                         shiftX = j + 1;
+
+                        
                         break;
 
                     }
@@ -308,8 +441,7 @@ namespace ClosedType
             Console.WriteLine();
         }
         public static void PrintMatrix(int[,] matrix)
-        {
-            
+        {          
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 var row = "";
@@ -319,8 +451,9 @@ namespace ClosedType
                 }
                 Console.WriteLine(row);
                 Console.WriteLine("__________________________________________");
+               
             }
-            Console.WriteLine();
+            Console.WriteLine();         
         }
         public static void PrintArray(int[] array)
         {
@@ -337,10 +470,64 @@ namespace ClosedType
         {
             Array.Copy(from, to, from.Length);
         }
+        public static void PdfPrintMatrix(Document doc, Pack init)
+        {
+          
+            PdfPTable table = new PdfPTable(init.Matrix.GetLength(1) + 1);
+         
+            for (int i = 0; i < init.Matrix.GetLength(0); i++)
+            {
+              
+                for (int j = 0; j < init.Matrix.GetLength(1); j++)
+                {
+                    table.AddCell(new PdfPCell
+                    {
+                        Phrase = new Phrase(init.Matrix[i, j].ToString()),
+                        HorizontalAlignment = 1
+                    });
+                }
+                table.AddCell(new PdfPCell
+                {
+                    Phrase = new Phrase(init.Supply[i].ToString()),
+                    HorizontalAlignment = 1
+                });
 
-       
+            }
+            for (int i = 0; i < init.Demand.Length; i++)
+                table.AddCell(new PdfPCell
+                {
+                    Phrase = new Phrase(init.Demand[i].ToString()),
+                    HorizontalAlignment = 1,
+                    
+                });
+
+            doc.Add(table);
+         
+
+        }
+        public static void PdfPrintMatrix(Document doc, string[,] matrix)
+        {
+
+            PdfPTable table = new PdfPTable(matrix.GetLength(1));
+
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    var k = matrix[i, j].ToString();
+                    table.AddCell(new PdfPCell
+                    {
+                        Phrase = new Phrase(k),
+                        HorizontalAlignment = 1
+                    });
+                }
+
+            }
+            doc.Add(table);
+        }
     }
-    
+
     class Program
     {
         static void Main(string[] args)
@@ -358,17 +545,51 @@ namespace ClosedType
                 }
             };
 
+
+            //CreatePdf(init);
             var closed = Solver.CloseMatrix(init.Matrix, init.Supply, init.Demand);
-            
+
             Wrapper("Initial matrix", init, null);
             Wrapper("Closed matrix", init, Solver.CloseMatrix);
             Wrapper("Northwest method solution", closed, Solver.NorthWestMethod);
             Wrapper("Minimal element solution", closed, Solver.MinimalElementMethod);
             Wrapper("Vogel's method", closed, Solver.VogelsMethod);
+
+            Solver.PotentialsMethod(closed, Solver.NorthWestMethod(closed.Matrix, closed.Supply, closed.Demand));
+
+
             Console.ReadKey();
         }
+
+        //private static void CreatePdf(Pack init)
+        //{
+        //    Document doc = new Document();
+
+        //    PdfWriter writer = PdfWriter.GetInstance(doc, new FileStream("file1.pdf", FileMode.Create));
+        //    doc.Open();
+        //    doc.Add(new Paragraph("Task"));
+        //    Solver.PdfPrintMatrix(doc, init);
+
+        //    //closed
+        //    doc.Add(new Paragraph("Closed matrix"));
+        //    var closed = Solver.CloseMatrix(init.Matrix, init.Supply, init.Demand);
+        //    Solver.PdfPrintMatrix(doc, closed);
+        //    //northwest method
+        //    doc.Add(new Paragraph("Northwest method"));
+
+        //    string[,] result = null;
+        //    Solver.NorthWestMethod(closed.Matrix, closed.Supply, closed.Demand,ref result);
+        //    Solver.PdfPrintMatrix(doc, result);
+        //    //min elem method
+
+
+        //    //vogel's method
+        //    doc.Close();
+
+        //}
+
         static void Wrapper(string title, Pack init, Func<int[,], int[], int[], Pack> SolveMethod)
-        {
+        {          
             Console.WriteLine("\t\t\t" + title + "\n");
             Pack result = null;
 

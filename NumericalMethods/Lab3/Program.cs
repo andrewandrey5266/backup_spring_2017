@@ -41,14 +41,10 @@ namespace Lab3
             return r[N, N];
         }
         static void Main(string[] args)
-        {
-            //Console.WriteLine(Romberg((n) => 1 / n, 1, 10));
+        {     
             Console.WriteLine(Romberg((n) => Math.Exp(-n * n / 2) / Math.Sqrt(2 * Math.PI), -3, 3));
-
 
             Console.ReadKey();
         }
-
-
     }
 }

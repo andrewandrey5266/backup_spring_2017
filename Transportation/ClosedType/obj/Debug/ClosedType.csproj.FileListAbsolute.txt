@@ -4,3 +4,11 @@ C:\Users\Dusheba\Desktop\Operation research\Transportation\ClosedType\bin\Debug\
 C:\Users\Dusheba\Desktop\Operation research\Transportation\ClosedType\obj\Debug\ClosedType.csprojResolveAssemblyReference.cache
 C:\Users\Dusheba\Desktop\Operation research\Transportation\ClosedType\obj\Debug\ClosedType.exe
 C:\Users\Dusheba\Desktop\Operation research\Transportation\ClosedType\obj\Debug\ClosedType.pdb
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\Transportation\ClosedType\bin\Debug\ClosedType.exe.config
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\Transportation\ClosedType\obj\Debug\ClosedType.exe
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\Transportation\ClosedType\obj\Debug\ClosedType.pdb
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\Transportation\ClosedType\bin\Debug\ClosedType.exe
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\Transportation\ClosedType\bin\Debug\ClosedType.pdb
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\Transportation\ClosedType\bin\Debug\itextsharp.dll
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\Transportation\ClosedType\bin\Debug\itextsharp.xml
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\Transportation\ClosedType\obj\Debug\ClosedType.csprojResolveAssemblyReference.cache

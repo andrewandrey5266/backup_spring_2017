@@ -3,3 +3,9 @@ C:\Users\Dusheba\Documents\Visual Studio 2015\Projects\NumericalMethods\Lab4\bin
 C:\Users\Dusheba\Documents\Visual Studio 2015\Projects\NumericalMethods\Lab4\bin\Debug\Lab4.pdb
 C:\Users\Dusheba\Documents\Visual Studio 2015\Projects\NumericalMethods\Lab4\obj\Debug\Lab4.exe
 C:\Users\Dusheba\Documents\Visual Studio 2015\Projects\NumericalMethods\Lab4\obj\Debug\Lab4.pdb
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\NumericalMethods\Lab4\bin\Debug\Lab4.exe.config
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\NumericalMethods\Lab4\obj\Debug\Lab4.exe
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\NumericalMethods\Lab4\obj\Debug\Lab4.pdb
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\NumericalMethods\Lab4\bin\Debug\Lab4.exe
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\NumericalMethods\Lab4\bin\Debug\Lab4.pdb
+C:\Users\Dusheba\Documents\GitHub\backup_spring_2017\NumericalMethods\Lab4\obj\Debug\Lab4.csprojResolveAssemblyReference.cache
